@@ -13,7 +13,6 @@
 	<link name="Totum github">https://github.com/totumonline/totum_mit</link>
 	<link name="Image github">https://github.com/bayrell-os/totum_online</link>
 	<link name="Docker">https://hub.docker.com/r/bayrell/totum_online</link>
-	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.totum_online.xml</xml>
 	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/totum_online/main/org.bayrell.totum_online.xml</xml>
 	<yaml>
 		<services>
