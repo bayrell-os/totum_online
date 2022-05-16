@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+	<uid>org.bayrell.totum_online</uid>
+	<name>Totum online</name>
+	<version>2.4.42-1</version>
+	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
+	<marketplace>https://cloud.bayrell.org/</marketplace>
+	<link name="Totum online">https://totum.online/</link>
+	<link name="Totum github">https://github.com/totumonline/totum_mit</link>
+	<link name="Image github">https://github.com/bayrell-os/totum_online</link>
+	<link name="Docker">https://hub.docker.com/r/bayrell/totum_online</link>
+	<xml name="bayrell.org">https://cloud.bayrell.org/marketplace/org.bayrell.alpine_php_fpm.xml</xml>
+	<xml name="github.com">https://raw.githubusercontent.com/bayrell-os/totum_online/main/org.bayrell.totum_online.xml</xml>
+	<yaml>
+		<services>
+			<_var_app_name_>
+				<image>docker.io/bayrell/totum_online:2.4.42-1</image>
+				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
+				<environment>
+					<TOTUM_SCHEMA_NAME>_var_totum_schema_name_</TOTUM_SCHEMA_NAME>
+					<TOTUM_ADMIN_EMAIL>_var_totum_admin_email_</TOTUM_ADMIN_EMAIL>
+					<TOTUM_DOMAIN>_var_totum_domain_</TOTUM_DOMAIN>
+					<TOTUM_ADMIN_PASS>_var_totum_admin_pass_</TOTUM_ADMIN_PASS>
+					<TOTUM_DB_NAME>_var_totum_db_name_</TOTUM_DB_NAME>
+					<TOTUM_DB_HOST>_var_totum_db_host_</TOTUM_DB_HOST>
+					<TOTUM_DB_USER>_var_totum_db_user_</TOTUM_DB_USER>
+					<TOTUM_DB_PASS>_var_totum_db_pass_</TOTUM_DB_PASS>
+				</environment>
+				<volumes>_var_app_name_:/data</volumes>
+			</_var_app_name_>
+		</services>
+		<volumes>
+			<_var_app_name_ />
+		</volumes>
+	</yaml>
+	<variables>
+		<variable>
+			<name>_var_totum_db_host_</name>
+			<label>Postgres db host</label>
+			<type>string</type>
+		</variable>
+		<variable>
+			<name>_var_totum_db_user_</name>
+			<label>Postgres db user</label>
+			<type>string</type>
+		</variable>
+		<variable>
+			<name>_var_totum_db_pass_</name>
+			<label>Postgres db password</label>
+			<type>string</type>
+		</variable>
+		<variable>
+			<name>_var_totum_schema_name_</name>
+			<label>Postgres schema name</label>
+			<type>string</type>
+		</variable>
+		<variable>
+			<name>_var_totum_db_name_</name>
+			<label>Postgres db name</label>
+			<type>string</type>
+		</variable>
+		<variable>
+			<name>_var_totum_admin_email_</name>
+			<label>Totum admin email</label>
+			<type>string</type>
+		</variable>
+		<variable>
+			<name>_var_totum_domain_</name>
+			<label>Totum domain name</label>
+			<type>string</type>
+		</variable>
+	</variables>
+	<modificators>
+		<li>org.bayrell.modificator.cloud_os</li>
+		<li>org.bayrell.modificator.deploy_hostname</li>
+	</modificators>
+	<patch>
+		<name>Template patch</name>
+		<operations>
+		</operations>
+	</patch>
+</template>
