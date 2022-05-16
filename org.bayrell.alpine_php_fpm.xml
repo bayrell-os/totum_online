@@ -2,7 +2,7 @@
 <template>
 	<uid>org.bayrell.totum_online</uid>
 	<name>Totum online</name>
-	<version>2.4.42-1</version>
+	<version>2.4.42-1-amd64</version>
 	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
 	<marketplace>https://cloud.bayrell.org/</marketplace>
 	<link name="Totum online">https://totum.online/</link>
@@ -14,12 +14,12 @@
 	<yaml>
 		<services>
 			<_var_app_name_>
-				<image>docker.io/bayrell/totum_online:2.4.42-1</image>
+				<image>docker.io/bayrell/totum_online:2.4.42-1-amd64</image>
 				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
 				<environment>
-					<TOTUM_SCHEMA_NAME>_var_totum_schema_name_</TOTUM_SCHEMA_NAME>
+					<TOTUM_SCHEMA_NAME>totum</TOTUM_SCHEMA_NAME>
+					<TOTUM_DOMAIN>totum.example</TOTUM_DOMAIN>
 					<TOTUM_ADMIN_EMAIL>_var_totum_admin_email_</TOTUM_ADMIN_EMAIL>
-					<TOTUM_DOMAIN>_var_totum_domain_</TOTUM_DOMAIN>
 					<TOTUM_ADMIN_PASS>_var_totum_admin_pass_</TOTUM_ADMIN_PASS>
 					<TOTUM_DB_NAME>_var_totum_db_name_</TOTUM_DB_NAME>
 					<TOTUM_DB_HOST>_var_totum_db_host_</TOTUM_DB_HOST>
@@ -50,11 +50,6 @@
 			<type>string</type>
 		</variable>
 		<variable>
-			<name>_var_totum_schema_name_</name>
-			<label>Postgres schema name</label>
-			<type>string</type>
-		</variable>
-		<variable>
 			<name>_var_totum_db_name_</name>
 			<label>Postgres db name</label>
 			<type>string</type>
@@ -65,8 +60,8 @@
 			<type>string</type>
 		</variable>
 		<variable>
-			<name>_var_totum_domain_</name>
-			<label>Totum domain name</label>
+			<name>_var_totum_admin_pass_</name>
+			<label>Totum admin password</label>
 			<type>string</type>
 		</variable>
 	</variables>

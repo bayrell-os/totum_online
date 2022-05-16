@@ -1,26 +1,26 @@
-if [ ! -d /data/totum-mit ]; then
-	mkdir -p /data/totum-mit
-	chown www:www /data/totum-mit
+if [ ! -d /data/totum ]; then
+	mkdir -p /data/totum
+	chown www:www /data/totum
 fi
-if [ ! -d /data/totum-mit/fls ]; then
-	mkdir -p /data/totum-mit/fls
-	cp /src/totum-mit/fls/* /data/totum-mit/fls/
-	chown www:www /data/totum-mit/fls
+if [ ! -d /data/totum/fls ]; then
+	mkdir -p /data/totum/fls
+	cp /src/totum/fls/* /data/totum/fls/
+	chown www:www /data/totum/fls
 fi
-if [ ! -d /data/totum-mit/myLogs ]; then
-	mkdir -p /data/totum-mit/myLogs
-	chown www:www /data/totum-mit/myLogs
+if [ ! -d /data/totum/myLogs ]; then
+	mkdir -p /data/totum/myLogs
+	chown www:www /data/totum/myLogs
 fi
-if [ ! -d /data/totum-mit/backups ]; then
-	mkdir -p /data/totum-mit/backups
-	chown www:www /data/totum-mit/backups
+if [ ! -d /data/totum/backups ]; then
+	mkdir -p /data/totum/backups
+	chown www:www /data/totum/backups
 fi
-if [ ! -d /data/totum-mit/totumTmpfiles ]; then
-	mkdir -p /data/totum-mit/totumTmpfiles
-	chown www:www /data/totum-mit/totumTmpfiles
+if [ ! -d /data/totum/totumTmpfiles ]; then
+	mkdir -p /data/totum/totumTmpfiles
+	chown www:www /data/totum/totumTmpfiles
 fi
-if [ ! -f /data/totum-mit/Conf.php ]; then
-	touch /data/totum-mit/Conf.php
-	chown www:www /data/totum-mit/Conf.php
+if [ ! -f /data/totum/Conf.php ]; then
+	touch /data/totum/Conf.php
+	chown www:www /data/totum/Conf.php
 	/var/www/totum-mit/bin/totum install --pgdump=pg_dump --psql=psql -e -- ru no-multi $TOTUM_SCHEMA_NAME $TOTUM_ADMIN_EMAIL $TOTUM_DOMAIN admin $TOTUM_ADMIN_PASS $TOTUM_DB_NAME $TOTUM_DB_HOST $TOTUM_DB_USER $TOTUM_DB_PASS
 fi
