@@ -8,6 +8,7 @@ RUN cd ~; \
 	apk update; \
 	apk upgrade; \
 	apk add php8-pdo_pgsql postgresql-client; \
+	rm -rf /var/cache/apk/*; \
 	echo 'Ok'
 	
 RUN cd ~; \

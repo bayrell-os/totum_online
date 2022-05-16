@@ -2,9 +2,13 @@
 <template>
 	<uid>org.bayrell.totum_online</uid>
 	<name>Totum online</name>
-	<version>2.4.42-1-amd64</version>
+	<version>2.4.42-1</version>
 	<maintainer>Ildar &lt;ildar@bayrell.org&gt;</maintainer>
 	<marketplace>https://cloud.bayrell.org/</marketplace>
+	<date>2022-05-16T20:24:00+06:00</date>
+	<arch>amd64</arch>
+	<arch>arm64v8</arch>
+	<arch>arm32v7</arch>
 	<link name="Totum online">https://totum.online/</link>
 	<link name="Totum github">https://github.com/totumonline/totum_mit</link>
 	<link name="Image github">https://github.com/bayrell-os/totum_online</link>
@@ -14,7 +18,7 @@
 	<yaml>
 		<services>
 			<_var_app_name_>
-				<image>docker.io/bayrell/totum_online:2.4.42-1-amd64</image>
+				<image>docker.io/bayrell/totum_online:2.4.42-1</image>
 				<hostname>{{.Service.Name}}.{{.Task.ID}}.local</hostname>
 				<environment>
 					<TOTUM_SCHEMA_NAME>totum</TOTUM_SCHEMA_NAME>
