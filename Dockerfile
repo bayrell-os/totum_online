@@ -27,7 +27,7 @@ RUN cd ~; \
 	
 COPY files/etc/nginx /etc/nginx
 COPY files/root/run.d /root/run.d
-COPY files/src/totum-mit /src/totum-mit
+COPY files/src/totum /src/totum
 COPY files/var/www/totum-mit /var/www/totum-mit
 
 RUN cd ~; \

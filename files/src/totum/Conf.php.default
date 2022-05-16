@@ -1,0 +1,65 @@
+<?php
+
+namespace totum\config;
+
+use totum\common\configs\WithPhpMailerSmtpTrait;
+use totum\common\configs\ConfParent;
+use totum\common\configs\MultiTrait;
+
+class Conf extends ConfParent{
+
+	/***** multi start ***
+    use MultiTrait;
+	/***** multi stop ***/
+
+	/***** no-multi start ***/
+    protected $hostName='totum.example';
+    protected $schemaName='totum';
+	/***** no-multi stop ***/
+
+	use WithPhpMailerSmtpTrait;
+
+	protected $SmtpData = [
+		'host' => 'smtp.example',
+		'port' => 25,
+		'login' => '',
+		'pass' => '',
+	];
+	
+	const db=array (
+		'dsn' => 'pgsql:host=database_postgres;port=5432;dbname=totum',
+		'host' => 'database_postgres',
+		'username' => 'totum',
+		'dbname' => 'totum',
+		'password' => 'totum',
+		'charset' => 'UTF8',
+		'pg_dump' => 'pg_dump',
+		'psql' => 'psql',
+	);
+	public static $timeLimit = 120;
+
+    const adminEmail='admin@totum.example';
+
+    const ANONYM_ALIAS='An';
+
+    const LANG="ru";
+
+    //protected $execSSHOn = true;
+
+    /***getSchemas***/
+    static function getSchemas()
+    {
+        return ['totum.example'=>'totum'];
+    }
+    /***getSchemasEnd***/
+
+    public function setSessionCookieParams()
+    {
+        session_set_cookie_params([
+            'path' => '/',
+            /*'secure' => true,*/ //-- uncomment this if your totum always on ssl
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
+    }
+}
