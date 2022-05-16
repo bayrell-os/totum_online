@@ -4,6 +4,7 @@ if [ ! -d /data/totum-mit ]; then
 fi
 if [ ! -d /data/totum-mit/fls ]; then
 	mkdir -p /data/totum-mit/fls
+	cp /src/totum-mit/fls/* /data/totum-mit/fls/
 	chown www:www /data/totum-mit/fls
 fi
 if [ ! -d /data/totum-mit/myLogs ]; then

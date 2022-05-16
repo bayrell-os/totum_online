@@ -29,6 +29,10 @@ COPY files/root/run.d /root/run.d
 COPY files/src/totum-mit /src/totum-mit
 COPY files/var/www/totum-mit /var/www/totum-mit
 
+RUN cd /var/www/totum-mit; \
+	composer install; \
+	echo 'Ok'
+
 RUN cd ~; \
 	chmod +x /root/run.sh; \
 	ln -s /data/totum-mit/Conf.php /var/www/totum-mit/Conf.php; \
